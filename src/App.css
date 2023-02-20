@@ -2,8 +2,19 @@
   --primary-color: #17181c;
   --primary-color-alpha: #4d505a;
   --secondary-color-grey: #909295;
-  --secondary-color-alpha: #4d505a;
+  --text-color-primary: #fff;
+  --text-color-secondary: #4d505a;
 }
+
+/* gradientBG : 
+background: rgb(18,20,24);
+background: linear-gradient(0deg, rgba(18,20,24,1) 0%, rgba(39,42,50,1) 100%); */
+
+/* blueGradient: 
+  background: rgb(1,80,154);
+background: linear-gradient(0deg, rgba(1,80,154,1) 0%, rgba(49,156,252,1) 100%);
+
+*/
 
 html,
 body {
@@ -15,6 +26,7 @@ body {
 #root {
   color: white;
   height: 100%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .left-sidebar-color {
@@ -27,9 +39,12 @@ body {
 }
 
 .auth__form-container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: row;
+  background: var(--primary-color);
+  padding: 0rem 3rem;
+  gap: 2rem;
 }
 
 .auth__form-container_fields {
@@ -37,38 +52,87 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  padding: 2rem;
-  background: #005fff;
+  padding: 4rem 0rem;
 }
 
 .auth__form-container_image {
   flex: 3;
   display: flex;
+  padding: 4rem 0rem;
   box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05);
 }
 
-.auth__form-container_image img {
+.auth__form-container_image-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 5rem;
   width: 100%;
   height: 100%;
+  border-radius: 1.5rem;
+  opacity: 0.9;
+  background-image: url(./assets/signup2.jpg);
+}
+
+.auth__form-container_image-area p {
+  font-size: 1.5rem;
+}
+
+.auth__form-container_image-area img {
+  display: none;
+}
+
+.auth__form-container_image-area span:first-of-type {
+  padding: 2rem 0 0 0;
+  font-size: 4rem;
+}
+
+.auth__form-container_image-area :nth-child(4) {
+  font-size: 4rem;
+}
+.auth__form-container_image-area :nth-child(5) {
+  font-size: 4rem;
+}
+
+.auth__form-container_image-area p:nth-child(7) {
+  position: absolute;
+  font-size: 0.7rem;
+  right: 3%;
+  top: 95%;
+}
+
+.categories {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.categories p {
+  font-size: 1rem !important;
+  display: flex;
+  flex-direction: row;
 }
 
 .auth__form-container_fields-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
+  justify-content: center;
+  height: 100%;
   padding: 2rem;
   box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
-  border-radius: 5px;
+  border-radius: 1.5rem;
   transition: 0.8s ease;
-  background: #fff;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
 }
 
 .auth__form-container_fields-content p {
   font-size: 1.5rem;
   font-family: Arial, Helvetica, sans-serif;
-  color: #05245a;
+  color: var(--text-color-primary);
   font-weight: 900;
 }
 
@@ -82,8 +146,8 @@ body {
 
 .auth__form-container_fields-content_input label {
   margin-bottom: 0.45rem;
-  color: rgb(61, 79, 88);
-  font-size: 12px;
+  color: var(--secondary-color-grey);
+  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.7px;
   line-height: 1.3;
@@ -91,17 +155,18 @@ body {
 
 .auth__form-container_fields-content_input input {
   padding: 0.55rem 0.4rem;
-  border: 1px solid rgb(184, 196, 194);
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 0.5rem;
+  font-size: 16px;
   outline: none;
+  border: none;
   transition: all 150ms ease-in-out 0s;
   width: 85%;
-  background: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color-grey);
 }
 
 .auth__form-container_fields-content_input input::placeholder {
-  color: #b1b1b1;
+  color: var(--text-color-secondary);
   width: 100%;
   font-weight: unset;
   font-family: Arial, Helvetica, sans-serif;
@@ -113,8 +178,9 @@ body {
 
 .auth__form-container_fields-content_input input:focus,
 .auth__form-container_fields-content_input input:active {
-  box-shadow: 0px 0px 0px 1.5px #005fff;
-  border-color: #005fff;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
+  box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
 }
 
 .auth__form-container_fields-content_input-password {
@@ -131,38 +197,48 @@ body {
 }
 
 .auth__form-container_fields-content_button button {
-  border-radius: 4px;
-  background: #005fff;
-  border: 1px solid #005fff;
-  color: #fff;
+  border-radius: 1rem;
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
+  color: var(--text-color-primary);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   padding: 0.7rem 1.2rem;
   outline: none;
   cursor: pointer;
   transition: 0.3s ease;
+  border: none;
 }
 
 .auth__form-container_fields-content_button button:hover {
-  background: #0066ff;
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 0.50437675070028) 0%,
+    rgba(49, 156, 252, 0.6532387955182073) 100%
+  );
 }
 
 .auth__form-container_fields-account {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
+  gap: 0.5rem;
   margin-top: 0.2rem;
 }
 
 .auth__form-container_fields-account p {
-  font-size: 14px;
-  color: #000;
-  font-weight: 500;
+  font-size: 15px;
+  color: var(--text-color-secondary);
+  font-weight: 700;
 }
 
 .auth__form-container_fields-account span {
-  color: #05245a;
+  color: var(--text-color-primary);
   cursor: pointer;
   font-weight: 700;
 }
@@ -170,30 +246,97 @@ body {
 @media screen and (max-width: 800px) {
   .auth__form-container {
     flex-direction: column-reverse;
+    height: auto;
+    align-items: center;
   }
 
   .auth__form-container_fields {
     justify-content: flex-start;
+    padding: 1rem 0;
+  }
+
+  .auth__form-container_fields * input {
+    align-items: center;
+    width: 95%;
+  }
+
+  .auth__form-container_fields-content_input input:focus,
+  .auth__form-container_fields-content_input input:active {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
+    box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
   }
 
   .auth__form-container_image {
     height: 100px;
     flex: none;
     box-shadow: none;
+    padding: 1rem 0 3rem 0;
   }
 
-  .auth__form-container_image img {
-    object-fit: cover;
+  .auth__form-container_image div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 1rem;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    opacity: 1;
+  }
+
+  .auth__form-container_image-area img {
+    display: block;
+    border-radius: 1rem;
+  }
+
+  .auth__form-container_image-area p {
+    display: none;
+  }
+
+  .auth__form-container_image-area span {
+    display: none;
+  }
+
+  .auth__form-container_image-area :nth-child(7) {
+    display: flex;
+    position: absolute;
+    padding-bottom: 1rem;
+    font-size: 0.7rem;
+    right: 4% !important;
+    top: 125% !important;
+  }
+
+  .auth__form-container_fields-content_button {
+    justify-content: center;
+  }
+
+  .auth__form-container_fields-content_button button {
+    width: 85%;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 455px) {
   .auth__form-container_fields {
-    padding: 2rem 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .auth__form-container_fields-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .auth__form-container_fields-content_input input {
     width: 95%;
+  }
+  .auth__form-container_fields-content_input input:focus,
+  .auth__form-container_fields-content_input input:active {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
+    box-shadow: 0px 0px 10px 1px rgba(49, 157, 252, 1);
   }
 
   .auth__form-container_fields-content_input-password {
@@ -220,6 +363,8 @@ body {
   height: fit-content;
   margin-bottom: 8px;
   background-color: var(--primary-color-alpha);
+  width: 250px;
+  border-radius: 1.5rem;
 }
 
 .str-chat-channel {
@@ -241,6 +386,31 @@ body {
 .str-chat__message-notification {
   background: var(--primary-color);
   cursor: pointer;
+}
+
+.str-chat__message-simple-text-inner {
+  background-color: #fff;
+  color: black;
+}
+
+.str-chat__message-text-inner {
+  color: var(--primary-color);
+}
+
+.str-chat__message-simple-data {
+  color: var(--primary-color-alpha);
+}
+
+.str-chat__date-separator-line {
+  background-color: var(--primary-color-alpha);
+}
+
+.str-chat__message-simple__actions__action svg {
+  fill: white;
+}
+
+.str-chat__input-flat .str-chat__textarea > textarea {
+  background: var(--primary-color-alpha);
 }
 
 @media screen and (max-width: 960px) {
@@ -312,8 +482,10 @@ body {
 }
 
 .channel__container {
-  height: 50%;
+  height: fit-content;
   width: 100%;
+  margin: 1rem;
+  border-radius: 1.5rem;
 }
 
 .str-chat__thread {
@@ -385,20 +557,20 @@ body {
 .channel-list__container {
   display: flex;
   /* height: 800px; */
-  height: 80%;
+  height: auto;
   box-shadow: inset 1px 0px 0px rgba(255, 255, 255, 0.1);
 }
 
 .channel-list__sidebar {
   width: 72px;
-  background: rgb(19, 23, 28);
+  background: rgb(18, 20, 24);
   background: linear-gradient(
     0deg,
-    rgba(19, 23, 28, 1) 0%,
-    rgba(38, 41, 49, 1) 82%
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
   );
   box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
+  border-radius: 1.5rem;
   margin: 1rem;
 
   /* border-top-left-radius: 16px; */
@@ -421,10 +593,17 @@ body {
 .channel-list__list__wrapper {
   display: flex;
   flex-direction: column;
-  background: var(--primary-color);
-  width: 240px;
+  height: auto;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
+  width: 280px;
   border-radius: 25px;
   margin: 1rem;
+  align-items: center;
 }
 
 .icon1__inner {
@@ -456,6 +635,10 @@ body {
 .channel-list__header {
   padding-left: 16px;
   height: 62px;
+}
+
+.channel-list__header p {
+  align-items: flex-start;
 }
 
 .channel-list__header__text {
@@ -875,10 +1058,16 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background: #ffffff;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   border-top-right-radius: 16px;
   z-index: 1;
+  border-radius: 1.5rem;
 }
 
 .team-channel-header__channel-wrapper {
@@ -894,7 +1083,7 @@ body {
   font-family: Helvetica Neue, sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: #2c2c30;
+  color: #fff;
   margin-right: 8px;
 }
 
@@ -1439,7 +1628,7 @@ ul.str-chat__simple-reactions-list:hover {
 
 .team-message-input__wrapper .str-chat__textarea textarea {
   display: flex;
-  background: #fff;
+  background: red;
   border: none;
   outline: none;
   font-family: Helvetica Neue, sans-serif;
@@ -1688,7 +1877,7 @@ div.rta__autocomplete.str-chat__emojisearch {
 .thread-message-input__wrapper .str-chat__textarea textarea {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: red;
   border: none;
   outline: none;
   font-family: Helvetica Neue, sans-serif;
@@ -1763,8 +1952,16 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 .str-chat__input-flat {
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   width: 100%;
+  height: fit-content;
   padding: 10px;
+  border-radius: 1.5rem;
 }
 
 @media screen and (max-width: 960px) {
