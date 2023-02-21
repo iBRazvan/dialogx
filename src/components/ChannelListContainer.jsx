@@ -13,11 +13,6 @@ const SideBar = ({ logout }) => (
   <div className="channel-list__sidebar">
     <div className="channel-list__sidebar__icon1">
       <div className="icon1__inner">
-        <img src={HospitalIcon} alt="Hospital" width="30" />
-      </div>
-    </div>
-    <div className="channel-list__sidebar__icon1">
-      <div className="icon1__inner">
         <HiChatAlt2 size={30} color={"#fff"} style={{ opacity: "50%" }} />
       </div>
     </div>
@@ -145,7 +140,7 @@ const ChannelListContainer = ({
       <div
         className="channel-list__container-responsive left-sidebar-color"
         style={{
-          left: toggleContainer ? "0%" : "-88%",
+          left: toggleContainer ? "0%" : "-89%",
         }}
       >
         <div
