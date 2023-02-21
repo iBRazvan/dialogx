@@ -145,11 +145,15 @@ const ChannelListContainer = ({
       <div
         className="channel-list__container-responsive left-sidebar-color"
         style={{
-          left: toggleContainer ? "0%" : "-89%",
+          left: toggleContainer ? "0%" : "-88%",
         }}
       >
         <div
-          className="channel-list__container-toggle"
+          className={`${
+            toggleContainer
+              ? "channel-list__container-toggle-active channel-list__container-toggle"
+              : "channel-list__container-toggle"
+          }`}
           onClick={() =>
             setToggleContainer((prevToggleContainer) => !prevToggleContainer)
           }

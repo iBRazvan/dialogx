@@ -30,11 +30,11 @@ body {
 }
 
 .left-sidebar-color {
-  background: rgb(77, 80, 90);
+  background: rgb(18, 20, 24);
   background: linear-gradient(
     90deg,
-    rgba(77, 80, 90, 1) 97%,
-    rgba(23, 24, 28, 1) 100%
+    rgba(18, 20, 24, 1) 97%,
+    rgba(39, 42, 50, 1) 100%
   );
 }
 
@@ -350,6 +350,7 @@ body {
   flex: 1;
   /* height: 800px; */
   height: 100%;
+  width: auto;
   /* border-radius: 16px; */
   background: var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 4px 0px;
@@ -389,12 +390,24 @@ body {
 }
 
 .str-chat__message-simple-text-inner {
-  background-color: #fff;
-  color: black;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
+  border: none;
+  outline: none;
 }
 
 .str-chat__message-text-inner {
-  color: var(--primary-color);
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
+  color: var(--text-color-primary);
 }
 
 .str-chat__message-simple-data {
@@ -410,11 +423,45 @@ body {
 }
 
 .str-chat__input-flat .str-chat__textarea > textarea {
-  background: var(--primary-color-alpha);
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
+}
+.str-chat__message--deleted-inner {
+  background-color: var(--primary-color-alpha);
+  color: #fff;
+}
+
+.str-chat__message-textarea {
+  color: #fff !important;
+}
+.str-chat__message-textarea::placeholder {
+  color: var(--text-color-secondary) !important;
+}
+
+.str-chat__message-simple--me .str-chat__message-text-inner {
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
+}
+
+.str-chat__input-flat-emojiselect svg {
+  fill: #fff;
+}
+
+.str-chat__input-flat .rfu-file-upload-button svg {
+  fill: #fff;
 }
 
 @media screen and (max-width: 960px) {
   .str-chat-channel-list.team.light {
+    display: none; /* error1 */
     position: unset;
     left: unset;
     top: unset;
@@ -482,7 +529,6 @@ body {
 }
 
 .channel__container {
-  height: fit-content;
   width: 100%;
   margin: 1rem;
   border-radius: 1.5rem;
@@ -799,6 +845,13 @@ body {
   height: 62px;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   padding-right: 20px;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
+  border-radius: 1.5rem;
 }
 
 .create-channel__header p {
@@ -810,8 +863,9 @@ body {
   margin-left: 20px;
 }
 
-.create-channel__header svg {
+.create-channel__header svg path {
   cursor: pointer;
+  fill: var(--secondary-color-grey);
 }
 
 .channel-name-input__wrapper {
@@ -833,34 +887,51 @@ body {
 .channel-name-input__wrapper input {
   font-family: Helvetica Neue, sans-serif;
   font-size: 18px;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--secondary-color-grey) !important;
   height: 50px;
   width: 540px;
-  background: #f7f6f8;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 1.5rem !important;
   padding-left: 16px;
+}
+
+.channel-name-input__wrapper input:focus {
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
 }
 
 .channel-name-input__wrapper input:focus {
   border: 1px solid var(--primary-color);
   outline: none;
-}
-
-.channel-name-input__wrapper input::placeholder {
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--primary-color) !important;
+  font-weight: 300 !important;
 }
 
 .create-channel__button-wrapper {
   height: 82px;
-  background: #f7f6f8;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: flex-end;
   border-bottom-right-radius: 16px;
 
+  border-radius: 1.5rem;
   padding: 0px 10px;
 }
 
@@ -870,9 +941,19 @@ body {
   font-weight: bold;
   font-size: 18px;
   padding: 10px 20px;
-  color: #ffffff;
+  color: var(--secondary-color-grey);
   border-radius: 8px;
   cursor: pointer;
+}
+
+.create-channel__button-wrapper p:hover {
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
+  color: #fff;
 }
 
 .user-list__container {
@@ -918,10 +999,17 @@ body {
   align-items: center;
   margin: 0px 20px;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .user-item__wrapper:hover {
-  background: #f7f6f8;
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
+  border-radius: 1.5rem;
   cursor: pointer;
 }
 
@@ -936,7 +1024,7 @@ body {
   font-family: Helvetica Neue, sans-serif;
   font-size: 14px;
   line-height: 17px;
-  color: var(--secondary-color-grey);
+
   word-break: break-all;
 }
 
@@ -1010,10 +1098,9 @@ body {
 .channel-name-input__wrapper input {
   font-family: Helvetica Neue, sans-serif;
   font-size: 18px;
-  color: rgba(0, 0, 0);
+  color: var(--text-color-primary);
   height: 50px;
   width: 90%;
-  background: #f7f6f8;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 8px;
@@ -1027,7 +1114,11 @@ body {
 
 .channel-name-input__wrapper input::placeholder {
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--secondary-color-grey);
+}
+
+.channel-name-input__wrapper input:focus::placeholder {
+  color: var(--primary-color) !important;
 }
 
 .edit-channel__button-wrapper {
@@ -1075,8 +1166,14 @@ body {
   align-items: center;
 }
 
+.team-channel-header__channel-wrapper svg path {
+  fill: var(--secondary-color-grey);
+}
+
 .team-channel-header__channel-wrapper svg {
   cursor: pointer;
+  width: 25px !important;
+  height: 25px !important;
 }
 
 .team-channel-header__name {
@@ -1628,7 +1725,6 @@ ul.str-chat__simple-reactions-list:hover {
 
 .team-message-input__wrapper .str-chat__textarea textarea {
   display: flex;
-  background: red;
   border: none;
   outline: none;
   font-family: Helvetica Neue, sans-serif;
@@ -1877,7 +1973,7 @@ div.rta__autocomplete.str-chat__emojisearch {
 .thread-message-input__wrapper .str-chat__textarea textarea {
   display: flex;
   align-items: center;
-  background: red;
+
   border: none;
   outline: none;
   font-family: Helvetica Neue, sans-serif;
@@ -1928,16 +2024,40 @@ div.rta__autocomplete.str-chat__emojisearch {
   display: none;
 }
 
-.channerl-list__container-toggle {
-  display: none;
+/* UNUSED */
+.channel-list__container-toggle {
+  display: flex;
   height: 50px;
   width: 50px;
-  background: #005fff;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   position: absolute;
-  right: -2%;
+  right: -5%;
   top: 50%;
   border-radius: 50%;
   z-index: 2;
+}
+
+.channel-list__container-toggle:active:hover {
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
+}
+
+.channel-list__container-toggle-active {
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
 }
 
 .channel-list__container-responsive {
@@ -1952,16 +2072,19 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 .str-chat__input-flat {
-  background: rgb(18, 20, 24);
-  background: linear-gradient(
-    0deg,
-    rgba(18, 20, 24, 1) 0%,
-    rgba(39, 42, 50, 1) 100%
-  );
+  background: var(--black10);
   width: 100%;
   height: fit-content;
   padding: 10px;
   border-radius: 1.5rem;
+}
+
+.str-chat__send-button svg > path {
+  fill: var(--secondary-color-grey);
+}
+
+.str-chat__send-button svg > path:hover:active {
+  fill: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 960px) {
@@ -2004,7 +2127,7 @@ div.rta__autocomplete.str-chat__emojisearch {
   }
 
   .channel-list__list__wrapper {
-    width: 100%;
+    width: auto;
   }
 
   .channerl-list__container-toggle {

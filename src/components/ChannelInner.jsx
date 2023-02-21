@@ -72,7 +72,7 @@ const TeamChannelHeader = ({ setIsEditing }) => {
                 size={32}
               />
               <p className="team-channel-header__name user">
-                {user.fullName || user.id}
+                {user.fullName || user.name || user.id}
               </p>
             </div>
           ))}
