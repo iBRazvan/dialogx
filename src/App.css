@@ -2091,6 +2091,14 @@ div.rta__autocomplete.str-chat__emojisearch {
   left: 20%;
 }
 
+.channel-list__container-toggle-arrow-active {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 0%;
+  left: 5%;
+}
+
 .channel-list__container-responsive {
   display: none;
   height: 100%;
@@ -2192,9 +2200,6 @@ div.rta__autocomplete.str-chat__emojisearch {
     position: absolute;
     right: -3%;
   }
-  .channel-list__sidebar {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 650px) {
@@ -2204,9 +2209,6 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 @media screen and (max-width: 400px) {
-  .channel-list__sidebar {
-    display: none;
-  }
   .channel-preview__item.multi {
     width: 150px;
   }
@@ -2216,8 +2218,31 @@ div.rta__autocomplete.str-chat__emojisearch {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 359px) {
+  .channel-list__container-responsive {
+    display: flex;
+    flex-direction: column;
+  }
   .channel-list__sidebar {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+  }
+  .channel-list__list__wrapper {
+    height: 100%;
+    width: auto;
+  }
+  .team-channel-list {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .team-channel-list__header {
+    position: sticky;
+    top: 0%;
+    z-index: 3;
+  }
+  .str-chat-channel-list.team.light {
+    max-width: 300px;
   }
 }

@@ -174,7 +174,13 @@ const ChannelListContainer = ({
             setToggleContainer((prevToggleContainer) => !prevToggleContainer)
           }
         >
-          <HiOutlineChevronDoubleRight className="channel-list__container-toggle-arrow " />
+          <HiOutlineChevronDoubleRight
+            className={`${
+              toggleContainer
+                ? "channel-list__container-toggle-arrow-active"
+                : "channel-list__container-toggle-arrow"
+            }`}
+          />
         </div>
         <ChannelListContent
           setCreateType={setCreateType}
