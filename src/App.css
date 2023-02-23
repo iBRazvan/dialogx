@@ -618,6 +618,34 @@ body {
   /* border-bottom-left-radius: 16px; */
 }
 
+.channel-list__sidebar__user-icon {
+  max-width: 44px;
+  max-height: 44px;
+  margin: 14px;
+  background: #fff;
+
+  border-radius: 9999px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+  margin-bottom: 3rem;
+}
+
+.user-icon {
+  opacity: 1;
+  max-width: 44px;
+  max-height: 44px;
+}
+
+.sidebar__line {
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 1.5rem;
+  height: 5px;
+  margin-bottom: 3rem;
+
+  background: var(--primary-color-alpha);
+}
+
 .channel-list__sidebar__icon1 {
   width: 44px;
   height: 44px;
@@ -2239,10 +2267,16 @@ div.rta__autocomplete.str-chat__emojisearch {
   }
   .team-channel-list__header {
     position: sticky;
-    top: 0%;
+
+    left: 26px;
+    max-width: 200px;
+
     z-index: 3;
   }
   .str-chat-channel-list.team.light {
     max-width: 300px;
+  }
+  .sidebar__line {
+    display: none;
   }
 }

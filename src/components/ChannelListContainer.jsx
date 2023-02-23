@@ -14,35 +14,46 @@ import {
 
 const cookies = new Cookies();
 
-const SideBar = ({ logout }) => (
-  <div className="channel-list__sidebar">
-    <div className="channel-list__sidebar__icon1">
-      <div className="icon1__inner">
-        <HiChatAlt2
-          size={30}
-          color={"#fff"}
-          style={{ opacity: "50%" }}
-          onClick
-        />
+const SideBar = ({ logout }) => {
+  const { client: user } = useChatContext();
+  const userImage = user?.user?.image;
+
+  return (
+    <div className="channel-list__sidebar">
+      <div className="channel-list__sidebar__user-icon">
+        <img src={userImage} className="user-icon" />
+      </div>
+
+      <div className="sidebar__line"></div>
+
+      <div className="channel-list__sidebar__icon1">
+        <div className="icon1__inner">
+          <HiChatAlt2
+            size={30}
+            color={"#fff"}
+            style={{ opacity: "50%" }}
+            onClick
+          />
+        </div>
+      </div>
+      <div className="channel-list__sidebar__icon2">
+        <div className="icon2__inner">
+          <HiOutlineCog
+            size={30}
+            color={"#fff"}
+            style={{ opacity: "50%" }}
+            onClick
+          />
+        </div>
+      </div>
+      <div className="channel-list__sidebar__icon2">
+        <div className="icon2__inner" onClick={logout}>
+          <HiLogout size={30} color={"#fff"} style={{ opacity: "50%" }} />
+        </div>
       </div>
     </div>
-    <div className="channel-list__sidebar__icon2">
-      <div className="icon2__inner">
-        <HiOutlineCog
-          size={30}
-          color={"#fff"}
-          style={{ opacity: "50%" }}
-          onClick
-        />
-      </div>
-    </div>
-    <div className="channel-list__sidebar__icon2">
-      <div className="icon2__inner" onClick={logout}>
-        <HiLogout size={30} color={"#fff"} style={{ opacity: "50%" }} />
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 const CompanyHeader = () => (
   <div className="channel-list__header">

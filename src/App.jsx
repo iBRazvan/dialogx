@@ -40,6 +40,7 @@ const App = () => {
     <div className="app__wrapper">
       <Chat client={client} theme="team light">
         <ChannelListContainer
+          client={client}
           isCreating={isCreating}
           setCreateType={setCreateType}
           setIsCreating={setIsCreating}
