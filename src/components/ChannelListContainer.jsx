@@ -5,7 +5,12 @@ import Cookies from "universal-cookie";
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from "./";
 import HospitalIcon from "../assets/hospital.png";
 import LogoutIcon from "../assets/logout.png";
-import { HiChatAlt2, HiLogout } from "react-icons/hi";
+import {
+  HiChatAlt2,
+  HiLogout,
+  HiOutlineChevronDoubleRight,
+  HiOutlineCog,
+} from "react-icons/hi";
 
 const cookies = new Cookies();
 
@@ -14,6 +19,16 @@ const SideBar = ({ logout }) => (
     <div className="channel-list__sidebar__icon1">
       <div className="icon1__inner">
         <HiChatAlt2
+          size={30}
+          color={"#fff"}
+          style={{ opacity: "50%" }}
+          onClick
+        />
+      </div>
+    </div>
+    <div className="channel-list__sidebar__icon2">
+      <div className="icon2__inner">
+        <HiOutlineCog
           size={30}
           color={"#fff"}
           style={{ opacity: "50%" }}
@@ -158,7 +173,9 @@ const ChannelListContainer = ({
           onClick={() =>
             setToggleContainer((prevToggleContainer) => !prevToggleContainer)
           }
-        ></div>
+        >
+          <HiOutlineChevronDoubleRight className="channel-list__container-toggle-arrow " />
+        </div>
         <ChannelListContent
           setCreateType={setCreateType}
           setIsCreating={setIsCreating}

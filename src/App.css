@@ -422,12 +422,7 @@ body {
 }
 
 .str-chat__input-flat .str-chat__textarea > textarea {
-  background: rgb(18, 20, 24);
-  background: linear-gradient(
-    0deg,
-    rgba(18, 20, 24, 1) 0%,
-    rgba(39, 42, 50, 1) 100%
-  );
+  background: transparent;
 }
 .str-chat__message--deleted-inner {
   background-color: var(--primary-color-alpha);
@@ -1296,6 +1291,7 @@ body {
     rgba(1, 80, 154, 1) 0%,
     rgba(49, 156, 252, 1) 100%
   );
+  border-radius: 1.5rem;
 }
 
 .team-channel-list__header svg {
@@ -1319,11 +1315,11 @@ body {
 
 .channel-preview__wrapper__selected {
   height: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 1.5rem;
   font-weight: bold;
   margin-right: 16px;
   cursor: pointer;
@@ -2087,6 +2083,14 @@ div.rta__autocomplete.str-chat__emojisearch {
   );
 }
 
+.channel-list__container-toggle-arrow {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 0%;
+  left: 20%;
+}
+
 .channel-list__container-responsive {
   display: none;
   height: 100%;
@@ -2099,7 +2103,12 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 .str-chat__input-flat {
-  background: var(--black10);
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   width: 100%;
   height: fit-content;
   padding: 10px;
@@ -2179,20 +2188,30 @@ div.rta__autocomplete.str-chat__emojisearch {
     top: 100%;
     left: 5%;
   }
+  .channel-list__container-toggle {
+    position: absolute;
+    right: -3%;
+  }
+  .channel-list__sidebar {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 650px) {
-  .channerl-list__container-toggle {
-    right: -3%;
+  .channel-list__container-toggle {
+    right: -4%;
   }
 }
 
 @media screen and (max-width: 400px) {
+  .channel-list__sidebar {
+    display: none;
+  }
   .channel-preview__item.multi {
     width: 150px;
   }
 
-  .channerl-list__container-toggle {
+  .channel-list__container-toggle {
     right: -5%;
   }
 }
