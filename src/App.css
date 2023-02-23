@@ -362,7 +362,7 @@ body {
 .str-chat-channel-list {
   height: fit-content;
   margin-bottom: 8px;
-  background-color: var(--primary-color-alpha);
+  background-color: transparent;
   width: 250px;
   border-radius: 1.5rem;
 }
@@ -666,10 +666,29 @@ body {
   width: 44px;
   height: 44px;
   margin: 14px;
-  background: transparent;
+  background: rgb(18, 20, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 20, 24, 1) 0%,
+    rgba(39, 42, 50, 1) 100%
+  );
   border-radius: 9999px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
   cursor: pointer;
+}
+
+.channel-list__sidebar__icon2:hover {
+  width: 44px;
+  height: 44px;
+  margin: 14px;
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
+  border-radius: 9999px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
 }
 
 .icon2__inner {
@@ -1271,6 +1290,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgb(1, 80, 154);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 80, 154, 1) 0%,
+    rgba(49, 156, 252, 1) 100%
+  );
 }
 
 .team-channel-list__header svg {
